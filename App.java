@@ -11,8 +11,6 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Insets;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class App extends JFrame {
 
@@ -27,7 +25,7 @@ public class App extends JFrame {
 
 	private JButton btn;
 	
-	MyButton myButton;
+	private NumbersButtonPainel numpanel;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -67,42 +65,22 @@ public class App extends JFrame {
 		outPut.setText("0\n0");
 		basePanel.add(outPut);
 
-		String[] simblesString = {"1", "2", "+"};
-		for (int i = 0; i < simblesString.length; i++) {
-			btn = new JButton();
-			btn.setText(simblesString[i]);
-			btn.setBounds(15 + 50*i, 200, 50, 50);
-			btn.setForeground(Color.ORANGE);
-			btn.setBackground(Color.WHITE);
-			basePanel.add(btn);
-		}
+		numpanel =  new NumbersButtonPainel();
+
+		basePanel.add(numpanel.getPanel());
+
+
+
+		// String[] simblesString = {"1", "2", "+"};
+		// for (int i = 0; i < simblesString.length; i++) {
+		// 	btn = new JButton();
+		// 	btn.setText(simblesString[i]);
+		// 	btn.setBounds(15 + 50*i, 200, 50, 50);
+		// 	btn.setForeground(Color.ORANGE);
+		// 	btn.setBackground(Color.WHITE);
+		// 	basePanel.add(btn);
+		// }
 		
-		// btn = new JButton();
-		// btn.setText("1");
-		// btn.setBounds(15, 200, 50, 50);
-		// btn.setForeground(Color.ORANGE);
-		// btn.setBackground(Color.WHITE);
-		// basePanel.add(btn);
-
-		// btn = new JButton();
-		// btn.setText("2");
-		// btn.setBounds(80, 200, 50, 50);
-		// btn.setForeground(Color.ORANGE);
-		// btn.setBackground(Color.WHITE);
-		// basePanel.add(btn);
-
-		MyButton.setWidthh(50);
-		myButton  = new MyButton();
-		myButton.setEActionListener(new ActionListener() {
-        
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("evento");
-            }
-        });
-		basePanel.add(myButton.getButton());
-
-
 	}
 
 
