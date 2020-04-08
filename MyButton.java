@@ -3,31 +3,26 @@ import java.awt.Color;
 
 import java.awt.event.ActionListener;
 
-public class MyButton {
+public class MyButton extends JButton{
 
     private String text = "X";
-    private JButton btn; 
     private int xpos;
     private int ypos;
     private static int width = 50;
     private static int height = 50;
-    // private ActionListener eActionListener;
+    private static  ActionListener actionListener;
 
     public MyButton(int xpos, int ypos, String text) {
         this.xpos = xpos;
         this.ypos = ypos;
         this.text = text;
-        this.btn = new JButton();
-        btn.setText(this.text);
-        btn.setBounds(this.xpos, this.ypos, MyButton.getWidthh(), MyButton.getHeightt());
-        btn.setForeground(Color.RED);
-        btn.setBackground(Color.WHITE);
+        setText(this.text);
+        setBounds(this.xpos, this.ypos, MyButton.getWidthh(), MyButton.getHeightt());
+        setForeground(Color.RED);
+        setBackground(Color.WHITE);
+        addActionListener(actionListener);
     }
 
-    public JButton getButton() {
-        return btn;
-    }
-    
     public String getText() {
         return text;
     }
@@ -51,7 +46,7 @@ public class MyButton {
         this.text = text;
     }
     
-    public void setEActionListener(ActionListener actionListener) {
-        btn.addActionListener(actionListener);
+    public static void setEActionListener(ActionListener aL) {
+        actionListener = aL;
     }
 }

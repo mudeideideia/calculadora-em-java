@@ -1,44 +1,30 @@
 import javax.swing.JPanel;
 import javax.swing.plaf.ColorUIResource;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import java.awt.Color;
-public class NumbersButtonPainel{
+public class NumbersButtonPainel extends JPanel{
 
-    JPanel panel;
     MyButton myButton;
 
-    public NumbersButtonPainel() {
-        this.panel = new JPanel();
-        this.panel.setLayout(null);
-        this.panel.setBackground(new ColorUIResource(25, 25, 25));
-        this.panel.setBounds(15, 150, 250, 280);
+    public NumbersButtonPainel(ActionListener aE) {
+        setLayout(null);
+        setBackground(new ColorUIResource(25, 25, 25));
+        setBounds(15, 150, 250, 280);
 
         MyButton.setWidthh(50);
         MyButton.setHeightt(50);
-		myButton  = new MyButton(100, 100, "o");
-		myButton.setEActionListener(new ActionListener() {
-        
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("evento");
-            }
-        });
+        MyButton.setEActionListener(aE);
 
-        this.panel.add(myButton.getButton());
-
-        String[] simblesString = {"1", "2", "+"};
-		for (int i = 0; i < simblesString.length; i++) {
-			myButton = new MyButton(
-                15 + 50*i, 15,
-                simblesString[i]);
-			this.panel.add(myButton.getButton());
-		}
+		add(new MyButton(15 +   0,  15, "1"));
+		add(new MyButton(15 +  50,  15, "2"));
+		add(new MyButton(15 + 100,  15, "3"));
+		add(new MyButton(15 +   0,  65, "4"));
+		add(new MyButton(15 +  50,  65, "5"));
+		add(new MyButton(15 + 100,  65, "6"));
+		add(new MyButton(15 +   0, 115, "7"));
+		add(new MyButton(15 +  50, 115, "8"));
+		add(new MyButton(15 + 100, 115, "9"));
     }
 
-    public JPanel getPanel() {
-        return panel;
-    }
 }
