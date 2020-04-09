@@ -13,7 +13,7 @@ public class NumbersButtonPainel extends JPanel{
     public NumbersButtonPainel(ActionListener aE) {
         setLayout(null);
         setBackground(new ColorUIResource(25, 25, 25));
-        setBounds(15, 150, 250, 280);
+        setBounds(15, 100, 255, 380);
 
         MyButton.setWidthh(btnWidth);
         MyButton.setHeightt(btnHeight);
@@ -30,6 +30,8 @@ public class NumbersButtonPainel extends JPanel{
         add(new MyButton(border + 0*btnWidth,  border + 2*btnHeight, "7"));
 		add(new MyButton(border + 1*btnWidth,  border + 2*btnHeight, "8"));
 		add(new MyButton(border + 2*btnWidth,  border + 2*btnHeight, "9"));
+        
+        add(new MyButton(border + 1*btnWidth,  border + 3*btnHeight, "0"));
     }
 
 }

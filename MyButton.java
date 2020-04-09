@@ -24,7 +24,7 @@ public class MyButton extends JButton{
         addActionListener(actionListener);
 
         // setBorderPainted(false);
-        setFont(new Font("Arial", Font.BOLD, 20));
+        setFont(new Font("Tahoma", Font.BOLD, 20));
         setFocusPainted(false);
         setContentAreaFilled(false);
     }

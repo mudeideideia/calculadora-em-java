@@ -14,7 +14,8 @@ public class App extends JFrame {
 	private int height = 500;
 
 	private TextAreaPanel outPut;
-	private NumbersButtonPainel numpanel;
+	private NumbersButtonPainel numPanel;
+	private OparationsButtonPainel opPanel;
 
 	private CalcManager calc;
 	
@@ -36,7 +37,8 @@ public class App extends JFrame {
 	public App() {
 		calc = new CalcManager();
 		outPut = new TextAreaPanel();
-		numpanel =  new NumbersButtonPainel(calc.getNumberListener());
+		numPanel =  new NumbersButtonPainel(calc.getNumberListener());
+		opPanel =  new OparationsButtonPainel(calc.getNumberListener());
 		
 		
 		basePanel =  new JPanel();
@@ -52,7 +54,8 @@ public class App extends JFrame {
 		
 		add(basePanel);
 		basePanel.add(outPut.getJTextArea());
-		basePanel.add(numpanel);
+		basePanel.add(numPanel);
+		basePanel.add(opPanel);
 		
 	}
 
