@@ -1,7 +1,8 @@
-import javax.swing.JButton;
 import java.awt.Color;
-
+import java.awt.Font;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 
 public class MyButton extends JButton{
 
@@ -18,9 +19,14 @@ public class MyButton extends JButton{
         this.text = text;
         setText(this.text);
         setBounds(this.xpos, this.ypos, MyButton.getWidthh(), MyButton.getHeightt());
-        setForeground(Color.RED);
+        setForeground(Color.WHITE);
         setBackground(Color.WHITE);
         addActionListener(actionListener);
+
+        // setBorderPainted(false);
+        setFont(new Font("Arial", Font.BOLD, 20));
+        setFocusPainted(false);
+        setContentAreaFilled(false);
     }
 
     public String getText() {
