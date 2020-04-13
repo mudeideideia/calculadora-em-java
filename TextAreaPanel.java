@@ -5,26 +5,45 @@ import java.awt.Color;
 
 import javax.swing.JTextArea;
 
-public class TextAreaPanel {
+public class TextAreaPanel extends JTextArea{
 
-    private JTextArea outPut;
-	private int marginLeft =15;
-	private int marginTop = 15;
+	private int marginLeft = 15;
+	private int marginTop = 70;
 	private int width = 400;
-    
-    public TextAreaPanel () {
-        outPut = new JTextArea();
-		outPut.setBounds(marginLeft, marginTop, width-2*marginLeft, 50);
-		outPut.setColumns(35);
-		outPut.setRows(2);
-		outPut.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		outPut.setMargin(new Insets(5, 5, 5, 5));
-		outPut.setCaretColor(Color.WHITE);
-		outPut.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-		outPut.setText("0\n0");
-    }
+	
+	private String ln1 = "0";
+	private String ln2 = "0";
 
-    public JTextArea getJTextArea() {
-        return outPut;
-    }
+    public TextAreaPanel () {
+		setBounds(marginLeft, marginTop, width-2*marginLeft, 50);
+		setColumns(35);
+		setRows(2);
+		setFont(new Font("Tahoma", Font.PLAIN, 18));
+		setMargin(new Insets(5, 5, 5, 5));
+		setCaretColor(Color.WHITE);
+		setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+		insert();
+	}
+	
+	private void insert() {
+		setText(ln1+"\n"+ln2);
+	}
+	
+	void setL1(String l) {
+		if(l == ""){
+			ln1 = "0";
+		} else {
+			ln1 = l;
+		}
+		insert();
+	}
+	
+	void setL2(String l) {
+		if(l == ""){
+			ln2 = "0";
+		} else {
+			ln2 = l;
+		}
+		insert();
+	}
 }

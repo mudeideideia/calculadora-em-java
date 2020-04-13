@@ -10,9 +10,12 @@ import java.awt.EventQueue;
 public class App extends JFrame {
 
 	private JPanel basePanel;
+	private int posX = 1500;
+	private int posY = 800;
 	private int width = 400;
-	private int height = 500;
+	private int height = 530;
 
+	private Header header;
 	private TextAreaPanel outPut;
 	private NumbersButtonPainel numPanel;
 	private OparationsButtonPainel opPanel;
@@ -35,15 +38,16 @@ public class App extends JFrame {
 	}
 
 	public App() {
-		calc = new CalcManager();
+		header =  new Header( this );
 		outPut = new TextAreaPanel();
+		calc = new CalcManager(outPut);
 		numPanel =  new NumbersButtonPainel(calc.getNumberListener());
-		opPanel =  new OparationsButtonPainel(calc.getNumberListener());
+		opPanel =  new OparationsButtonPainel(calc.getOperationListener());
 		
 		
 		basePanel =  new JPanel();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(1500, 300, width, height);
+		setBounds(posX, posY, width, height);
 
 
 		basePanel.setBackground(Color.DARK_GRAY);
@@ -53,7 +57,8 @@ public class App extends JFrame {
 		
 		
 		add(basePanel);
-		basePanel.add(outPut.getJTextArea());
+		basePanel.add(header);
+		basePanel.add(outPut);
 		basePanel.add(numPanel);
 		basePanel.add(opPanel);
 		

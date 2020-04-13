@@ -8,12 +8,15 @@ public class OparationsButtonPainel extends JPanel{
     private int btnWidth = 75;
     private int btnHeight = 85;
     private int border = 15;
+	private int posX = 280;
+	private int posY = 135;
+
 
 
     public OparationsButtonPainel(ActionListener aE) {
         setLayout(null);
         setBackground(new ColorUIResource(25, 25, 25));
-        setBounds(280, 100, 105, 380);
+        setBounds(posX, posY, 105, 380);
 
         MyButton.setWidthh(btnWidth);
         MyButton.setHeightt(btnHeight);
